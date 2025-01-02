@@ -1,0 +1,19 @@
+.header {
+    background-color: var(--gray-800);
+    display: flex;
+    justify-content: center;
+    padding: 1.25rem 0;  /* altura e largura */
+    height: 80px;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.header img {
+    height: 2rem;
+    
+}
+
+.header strong{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
