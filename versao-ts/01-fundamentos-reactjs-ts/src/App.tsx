@@ -5,12 +5,12 @@ import style from './App.module.css'
 
 import { Sidebar } from './components/Sidebar';
 
-import { Post } from "./components/Post";
+import { Post, PostType } from "./components/Post";
 
 
 
 
-const posts = [
+const posts:PostType[] = [
 
   {
     id: 1,
@@ -28,12 +28,14 @@ const posts = [
 
 
     ],
-    publishedAt: new Date('2024-01-01 20:20:20')
+    publishedAt: new Date('2025-03-01 20:20:20')
+
   },
   {
     id: 2,
     author: {
-      avatarUrl: "https://github.com/letbarros2.png",
+      avatarUrl: "https://github.com/Antonio-Elvis-Dev.png",
+
       name: "Leticia",
       role: "Web Developer"
     },
@@ -46,12 +48,14 @@ const posts = [
 
 
     ],
-    publishedAt: new Date('2024-01-01 20:20:20')
+    publishedAt: new Date('2025-03-01 20:20:20')
+
   },
   {
     id: 3,
     author: {
-      avatarUrl: "https://github.com/WemersonGomes10.png",
+      avatarUrl: "https://github.com/Antonio-Elvis-Dev.png",
+
       name: "Wemerson",
       role: "Web Developer"
     },
@@ -64,7 +68,7 @@ const posts = [
 
 
     ],
-    publishedAt: new Date('2024-01-01 20:20:20')
+    publishedAt: new Date('2025-03-01 20:20:20')
   },
 ]
 
@@ -81,11 +85,9 @@ export function App() {
         <main>
 
           {posts.map((post) => {
-            return <Post 
-            key={post.id} 
-            author={post.author} 
-            content={post.content} 
-            publishedAt={post.publishedAt}/>
+            return <Post
+              key={post.id}
+              post={post} />
           }
           )}
 
