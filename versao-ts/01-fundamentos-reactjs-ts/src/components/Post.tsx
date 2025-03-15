@@ -17,7 +17,8 @@ interface Content {
     content: string
 }
 
-interface Post  {
+export interface PostType  {
+    id: number
     author: Author
     publishedAt: Date
     content: Content[]
@@ -25,7 +26,7 @@ interface Post  {
 }
 
 interface PostProps {
-    post: Post
+    post: PostType
 }
 
 export function Post({post}: PostProps) {

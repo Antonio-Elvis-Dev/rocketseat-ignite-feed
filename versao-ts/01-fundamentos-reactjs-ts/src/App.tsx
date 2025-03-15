@@ -5,30 +5,12 @@ import style from './App.module.css'
 
 import { Sidebar } from './components/Sidebar';
 
-import { Post } from "./components/Post";
+import { Post, PostType } from "./components/Post";
 
 
 
-interface Author {
-  avatarUrl: string
-  name: string
-  role: string
-}
 
-interface Content {
-  type: 'paragraph' | 'link'
-  content: string
-}
-
-interface PostProps {
-  id: number
-  author: Author
-  publishedAt: Date
-  content: Content[]
-}
-
-
-const posts:PostProps[] = [
+const posts:PostType[] = [
 
   {
     id: 1,
@@ -46,12 +28,14 @@ const posts:PostProps[] = [
 
 
     ],
-    publishedAt: new Date('2024-01-01 20:20:20')
+    publishedAt: new Date('2025-03-01 20:20:20')
+
   },
   {
     id: 2,
     author: {
-      avatarUrl: "https://github.com/letbarros2.png",
+      avatarUrl: "https://github.com/Antonio-Elvis-Dev.png",
+
       name: "Leticia",
       role: "Web Developer"
     },
@@ -64,12 +48,14 @@ const posts:PostProps[] = [
 
 
     ],
-    publishedAt: new Date('2024-01-01 20:20:20')
+    publishedAt: new Date('2025-03-01 20:20:20')
+
   },
   {
     id: 3,
     author: {
-      avatarUrl: "https://github.com/WemersonGomes10.png",
+      avatarUrl: "https://github.com/Antonio-Elvis-Dev.png",
+
       name: "Wemerson",
       role: "Web Developer"
     },
@@ -82,7 +68,7 @@ const posts:PostProps[] = [
 
 
     ],
-    publishedAt: new Date('2024-01-01 20:20:20')
+    publishedAt: new Date('2025-03-01 20:20:20')
   },
 ]
 
@@ -101,9 +87,7 @@ export function App() {
           {posts.map((post) => {
             return <Post
               key={post.id}
-              author={post.author}
-              content={post.content}
-              publishedAt={post.publishedAt} />
+              post={post} />
           }
           )}
 
